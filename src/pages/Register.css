@@ -1,0 +1,138 @@
+:root {
+	--page-bg: #eef7f7;
+	--card-bg: #fff;
+	--muted: #6b7280;
+	--accent: #0b63ff;
+	--shadow: 0 12px 36px rgba(16, 24, 40, 0.06);
+	--radius: 14px;
+	--gap: 16px;
+	--text-dark: #07102a;
+	--input-border: #e6e9ee;
+}
+
+.register-page {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+.register-page a {
+	color: #2563eb;
+	text-decoration: none;
+	font-size: 16px;
+}
+
+.register-card {
+	max-width: 920px;
+	margin: 24px auto;
+	padding: 28px;
+	background: var(--card-bg);
+	border-radius: var(--radius);
+	box-shadow: var(--shadow);
+	border: 1px solid rgba(15, 23, 42, 0.03);
+	box-sizing: border-box;
+}
+
+.register-card .header {
+	display: flex;
+	gap: 16px;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	margin-bottom: 8px;
+}
+.register-card .brand {
+	display: flex;
+	gap: 12px;
+	align-items: center;
+}
+.register-card img.logo {
+	width: 48px;
+	height: 48px;
+	object-fit: contain;
+}
+.register-card h1 {
+	margin: 0;
+	font-size: 28px;
+	font-weight: 900;
+	color: #071022;
+	letter-spacing: -0.01em;
+}
+.register-card .lead {
+	color: var(--muted);
+	margin-top: 6px;
+	font-size: 14px;
+}
+
+.register-card .section-title {
+	font-weight: 700;
+	font-size: 16px;
+	margin-top: 20px;
+}
+.register-card .sep {
+	height: 1px;
+	background: rgba(15, 23, 42, 0.04);
+	margin-top: 10px;
+}
+
+.register-card form {
+	margin-top: 18px;
+}
+.form-row {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 16px;
+	margin-bottom: 12px;
+}
+.form-row.one-col {
+	grid-template-columns: 1fr;
+}
+
+.register-card input,
+.register-card textarea,
+.register-card select {
+	width: 100% !important;
+	box-sizing: border-box;
+	border: 1px solid #e6e9ee !important;
+	background: #fff !important;
+	padding: 11px 14px !important;
+	border-radius: 10px !important;
+	font-size: 14px;
+	outline: none !important;
+	-webkit-appearance: none;
+	appearance: none;
+	transition: box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.register-card input:focus,
+.register-card textarea:focus,
+.register-card select:focus {
+	outline: none !important;
+	border-color: #0b63ff !important;
+	box-shadow: 0 6px 18px rgba(11, 99, 246, 0.09) !important;
+}
+
+.register-card input[readonly],
+.register-card input:disabled,
+.register-card select:disabled {
+	opacity: 0.95;
+	background: #fbfdff;
+}
+
+.register-card input:-webkit-autofill,
+.register-card input:-webkit-autofill:hover,
+.register-card input:-webkit-autofill:focus,
+.register-card textarea:-webkit-autofill,
+.register-card textarea:-webkit-autofill:hover,
+.register-card textarea:-webkit-autofill:focus {
+	-webkit-box-shadow: 0 0 0px 1000px #fff inset !important;
+	box-shadow: 0 0 0px 1000px #fff inset !important;
+	-webkit-text-fill-color: #0b1220 !important;
+	transition: background-color 5000s ease-in-out 0s;
+}
+
+@media (max-width: 880px) {
+	.register-card input,
+	.register-card textarea,
+	.register-card select {
+		padding: 10px 12px !important;
+	}
+}

@@ -1,0 +1,565 @@
+.container {
+  padding: 0 0 28px 0;
+}
+
+.matchBlock {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 14px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 22px;
+  box-sizing: border-box;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  transition: transform 0.16s ease, box-shadow 0.16s ease, background 0.16s ease;
+}
+
+
+.teamName {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.teamSub {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.scoreCenter {
+  text-align: center;
+}
+
+.scoreBig {
+  font-size: 28px;
+  font-weight: 900;
+}
+.scoreBig span {
+  opacity: 0.6;
+  font-weight: 700;
+}
+
+.scoreStatus {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: #059669;
+  margin-top: 4px;
+}
+
+.matchMeta {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+.mainGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 18px;
+  margin-top: 10px;
+  align-items: flex-start; /* 🔹 qo'shildi – cardlar faqat o'z balandligicha */
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 8px 26px var(--shadow);
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  transition: transform 0.16s ease, box-shadow 0.16s ease, background 0.16s ease;
+}
+
+.matchBlock:hover,
+.card:hover {
+  transform: translateY(-2px);
+}
+
+
+.cardTitle {
+  font-size: 15px;
+  font-weight: 800;
+  margin-bottom: 6px;
+  color: var(--text-dark);
+}
+
+.cardSub {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+/* ----------------------------
+  PLAYER HEADER
+---------------------------- */
+.playerHeader {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.playerAvatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: #e6edff;
+  color: #0b3be6;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.playerNameBig {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--text-dark);
+}
+
+.playerRoleBig {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.playerTagRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.playerTag {
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(11, 59, 230, 0.06);
+  color: #1d4ed8;
+  font-weight: 600;
+}
+
+/* ----------------------------
+  MAIN PLAYER STATS (LEFT)
+---------------------------- */
+.statsList {
+  margin-top: 18px;
+  padding-left: 4px;
+}
+
+.statsRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.statLabel {
+  font-size: 14px;
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+.singleVal {
+  font-size: 14px;
+  font-weight: 700;
+  text-align: right;
+}
+
+.mutedSmall {
+  font-size: 12px;
+  color: var(--muted);
+  margin-left: 4px;
+}
+
+/* RIGHT COLUMN */
+.rightColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* METRIC ROWS */
+.metricRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  padding: 8px 0;
+  border-top: 1px solid rgba(226, 232, 240, 0.9);
+}
+.metricRow:first-of-type {
+  margin-top: 10px;
+}
+
+.metricVal {
+  font-weight: 700;
+}
+
+/* Futbol maydoni heatmap (Asosiy harakatlar cardi) */
+.heatmapPitch {
+  position: relative;
+  margin-top: 12px;
+  border-radius: 18px;
+  background: #14532d; /* maydon rangi */
+  overflow: hidden;
+  /* odatiy nisbati: biroz kvadratga yaqin */
+  aspect-ratio: 4 / 3;
+  box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.18);
+}
+
+/* Oq chiziqlar – yarim maydon va jarima maydoni */
+.pitchLines {
+  position: absolute;
+  inset: 6%;
+  border-radius: 14px;
+  border: 2px solid rgba(249, 250, 251, 0.8);
+  box-sizing: border-box;
+}
+
+.pitchLines::before,
+.pitchLines::after {
+  content: '';
+  position: absolute;
+  width: 22%;
+  height: 55%;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 2px solid rgba(249, 250, 251, 0.8);
+}
+
+.pitchLines::before {
+  left: 0;
+  border-left: none;
+}
+
+.pitchLines::after {
+  right: 0;
+  border-right: none;
+}
+
+/* Markaziy chiziq va doira */
+.pitchLines::marker {
+  content: none;
+}
+
+/* Markaziy chiziq */
+.pitchLines::selection {
+  content: none;
+}
+
+/* Markaz chizig'i va doirasi uchun separate element: pseudo hack ishlatmaymiz */
+.heatmapPitch::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 6%;
+  bottom: 6%;
+  width: 2px;
+  background: rgba(249, 250, 251, 0.8);
+  transform: translateX(-50%);
+}
+
+.heatmapPitch::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 18%;
+  height: 18%;
+  border-radius: 999px;
+  border: 2px solid rgba(249, 250, 251, 0.8);
+  transform: translate(-50%, -50%);
+}
+
+/* Issiq nuqtalar */
+.heatDot {
+  position: absolute;
+  width: 22%;
+  height: 22%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  background: radial-gradient(
+    circle,
+    rgba(248, 113, 113, 0.9) 0%,
+    rgba(251, 146, 60, 0.8) 40%,
+    rgba(252, 211, 77, 0.35) 65%,
+    rgba(254, 252, 232, 0) 100%
+  );
+}
+
+/* Dark mode uchun biroz o'zgartirish */
+:global(.pl-dark) .heatmapPitch {
+  background: #052e16;
+  box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.7);
+}
+
+
+/* NOTES */
+.notesText {
+  font-size: 14px;
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* 🔹 DARK MODE OVERRIDES */
+:global(.pl-dark) .matchBlock,
+:global(.pl-dark) .card {
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+  border-color: rgba(15, 23, 42, 0.7);
+}
+
+:global(.pl-dark) .statsRow {
+  border-bottom-color: rgba(15, 23, 42, 0.7);
+}
+
+:global(.pl-dark) .metricRow {
+  border-top-color: rgba(15, 23, 42, 0.8);
+}
+
+:global(.pl-dark) .playerAvatar {
+  background: linear-gradient(
+    180deg,
+    rgba(239, 246, 255, 0.12),
+    rgba(15, 23, 42, 0.96)
+  );
+  color: #bfdbfe;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.6);
+}
+
+:global(.pl-dark) .playerTag {
+  background: rgba(37, 99, 235, 0.3);
+  color: #e5edff;
+}
+
+:global(.pl-dark) .heatmapBox {
+  background: radial-gradient(
+    circle at 35% 20%,
+    rgba(59, 130, 246, 0.75),
+    rgba(15, 23, 42, 1)
+  );
+  color: #e5e7eb;
+}
+
+
+/* --------------------------
+   HISTORY LIST (player games)
+-------------------------- */
+
+.gamesFilterRow {
+  margin-top: 16px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.gamesFilterWrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.gamesFilterSelect {
+  padding: 8px 34px 8px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  background: #ffffff;
+  font-size: 14px;
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+
+.gamesFilterSelect:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.15);
+}
+
+.gamesFilterArrow {
+  position: absolute;
+  right: 12px;
+  pointer-events: none;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* Dark mode */
+:global(.pl-dark) .gamesFilterSelect {
+  background: #020617;
+  border-color: rgba(30, 64, 175, 0.9);
+}
+
+:global(.pl-dark) .gamesFilterArrow {
+  color: #e5e7eb;
+}
+
+/* Pagination style */
+.gamesPagination {
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+}
+
+.gamesPageBtn {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  border: none;
+  background: rgba(15, 23, 42, 0.05);
+  font-size: 16px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.gamesPageBtn:hover:not(:disabled) {
+  background: rgba(37, 99, 235, 0.08);
+}
+
+.gamesPageBtn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.gamesPaginationLabel {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.gamesList {
+  margin-top: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.gameItem {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(248, 250, 252, 0.7);
+  cursor: pointer;
+  transition: background 0.14s ease, transform 0.12s ease,
+    box-shadow 0.12s ease;
+}
+
+.gameItem:hover {
+  background: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 30px var(--shadow);
+}
+
+.gameItemActive {
+  background: #e0ecff;
+  border-color: #2563eb;
+}
+
+.gameTeams {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.gameMeta {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.gameScore {
+  font-size: 14px;
+  font-weight: 700;
+  text-align: right;
+}
+
+.gameScoreLabel {
+  display: inline-block;
+  margin-left: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(16, 185, 129, 0.08);
+}
+
+/* bo'sh holat */
+.gameEmpty {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+/* --------------------------
+      RESPONSIVE
+-------------------------- */
+
+/* Medium screens */
+@media (max-width: 1100px) {
+  .matchBlock {
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+  }
+
+  .mainGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .scoreCenter {
+    order: -1;
+  }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .matchBlock {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .playerHeader {
+    align-items: flex-start;
+  }
+
+  .mainGrid {
+    gap: 14px;
+  }
+
+  .card {
+    padding: 16px 14px;
+  }
+
+  /* 🔹 Yangi qism – pastdagi 3 ta card uchun gorizontal scroll */
+  .rightColumn {
+    flex-direction: row;        /* ustun emas, yonma-yon */
+    overflow-x: auto;          /* gorizontal scroll */
+    gap: 12px;
+    padding-bottom: 8px;
+    scroll-snap-type: x mandatory;
+  }
+
+  .rightColumn > .card {
+    flex: 0 0 100%;            /* ekranning 100% kengligi */
+    min-width: 100%;
+    scroll-snap-align: start;
+  }
+
+  /* ixtiyoriy: scrollbarni yashirishni xohlasang, qo‘shib qo‘y */
+  .rightColumn::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+  

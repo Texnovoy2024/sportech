@@ -1,0 +1,158 @@
+/* ================================
+   PAGE TITLE
+================================ */
+.pl-pageTitle {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  color: #0f172a;
+}
+
+/* ================================
+   MAIN GRID (LEFT + RIGHT)
+================================ */
+.pl-gridTwo {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.5fr);
+  gap: 24px;
+  align-items: flex-start;
+}
+
+/* ================================
+   CARD
+================================ */
+.pl-card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 18px 60px rgba(15, 23, 42, 0.06);
+}
+
+.pl-cardTitle {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #0f172a;
+}
+
+.pl-cardMeta {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* ================================
+   FORM
+================================ */
+.pl-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pl-fieldRow {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.pl-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+}
+
+.pl-field label {
+  font-weight: 600;
+  color: #4b5563;
+}
+
+.pl-field input,
+.pl-field select {
+  width: 100%;
+  height: 42px;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+  padding: 0 14px;
+  font-size: 14px;
+  background: #ffffff;
+  outline: none;
+}
+
+.pl-field input:focus,
+.pl-field select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.12);
+}
+
+/* ================================
+   PRIMARY BUTTON
+================================ */
+.primary-button {
+  margin-top: 8px;
+  padding: 12px 28px;
+  border-radius: 999px;
+  border: none;
+  background: #2563eb;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+.primary-button:hover {
+  filter: brightness(0.95);
+}
+
+/* ================================
+   DANGER LINK
+================================ */
+.pl-linkDanger {
+  margin-top: 8px;
+  border: none;
+  background: transparent;
+  color: #ef4444;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+/* ================================
+   TABLET (⭐ ASOSIY FIX)
+   iPad / 768px – 1024px
+================================ */
+@media (max-width: 1024px) {
+  /* grid 1 ustunga tushadi */
+  .pl-gridTwo {
+    grid-template-columns: 1fr;
+  }
+
+  /* form inputlari 2 ustun */
+  .pl-fieldRow {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .pl-card {
+    padding: 20px;
+  }
+
+  .primary-button {
+    width: 100%;
+    align-self: stretch;
+    text-align: center;
+  }
+}
+
+/* ================================
+   MOBILE
+================================ */
+@media (max-width: 640px) {
+  .pl-fieldRow {
+    grid-template-columns: 1fr;
+  }
+
+  .primary-button {
+    width: 100%;
+  }
+}

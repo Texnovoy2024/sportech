@@ -1,0 +1,464 @@
+/* ===============================
+   LAYOUT GRID
+================================ */
+.cg-grid {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.3fr);
+  gap: 24px;
+  align-items: flex-start;
+}
+
+/* ===============================
+   FORM
+================================ */
+.cg-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cg-sectionTitle {
+  margin-top: 12px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.cg-divider {
+  border: none;
+  border-top: 1px solid rgba(148, 163, 184, 0.35);
+  margin: 18px 0;
+}
+
+/* ===============================
+   FIELD ROWS
+================================ */
+.pl-fieldRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.pl-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pl-field label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #475569;
+}
+
+.pl-field input,
+.pl-field select,
+.cg-textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid #e5e7eb;
+  font-size: 14px;
+}
+
+.cg-textarea {
+  border-radius: 14px;
+  resize: vertical;
+  min-height: 90px;
+}
+
+.pl-field input:focus,
+.pl-field select:focus,
+.cg-textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+/* ===============================
+   SCORE
+================================ */
+.cg-scoreRow {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 8px;
+  align-items: center;
+}
+
+.cg-scoreRow span {
+  font-weight: 700;
+}
+
+/* ===============================
+   BUTTONS
+================================ */
+.cg-formButtons {
+  margin-top: 12px;
+  display: flex;
+  gap: 12px;
+}
+
+.primary-button {
+  background: #2563eb;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.primary-button:hover {
+  background: #1d4ed8;
+}
+
+.secondary-button {
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 1px solid #cbd5f5;
+  background: #fff;
+  cursor: pointer;
+}
+
+/* ===============================
+   SIDE CARD
+================================ */
+.cg-side {
+  align-self: flex-start;
+}
+
+/* ===============================
+   TABLE
+================================ */
+.cg-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+  font-size: 13px;
+}
+
+.cg-table th,
+.cg-table td {
+  padding: 8px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.cg-actions {
+  display: flex;
+  gap: 6px;
+  justify-content: flex-end;
+}
+
+/* ===============================
+   MOBILE FIX
+================================ */
+@media (max-width: 768px) {
+  /* grid → single column */
+  .cg-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  /* all field rows → 1 column */
+  .pl-fieldRow {
+    grid-template-columns: 1fr;
+  }
+
+  /* score stacked */
+  .cg-scoreRow {
+    grid-template-columns: 1fr;
+  }
+
+  .cg-scoreRow span {
+    text-align: center;
+  }
+
+  /* inputs more touch-friendly */
+  .pl-field input,
+  .pl-field select,
+  .cg-textarea {
+    font-size: 15px;
+    padding: 12px 16px;
+  }
+
+  /* buttons full width */
+  .cg-formButtons {
+    flex-direction: column;
+  }
+
+  .primary-button,
+  .secondary-button {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* side card below */
+  .cg-side {
+    margin-top: 12px;
+  }
+
+  /* table scroll */
+  .cg-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+
+/* ===============================
+   PAGINATION
+================================ */
+.cg-pagination {
+  margin-top: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.cg-pagination span {
+  font-size: 13px;
+  font-weight: 600;
+  color: #475569;
+}
+
+.cg-pagination button {
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.cg-pagination button:hover:not(:disabled) {
+  background: #f1f5f9;
+}
+
+.cg-pagination button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* =========================
+   ACTION BUTTONS – PRO STYLE
+========================= */
+
+.cg-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+/* Umumiy action button */
+.cg-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  border: 1px solid transparent;
+  background: #f8fafc;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* EDIT */
+.cg-edit {
+  color: #2563eb;
+  background: #eff6ff;
+  border-color: #bfdbfe;
+}
+
+.cg-edit:hover {
+  background: #dbeafe;
+}
+
+/* DELETE */
+.cg-delete {
+  color: #dc2626;
+  background: #fef2f2;
+  border-color: #fecaca;
+}
+
+.cg-delete:hover {
+  background: #fee2e2;
+}
+
+/* =========================
+   MOBILE – ICON ONLY MODE
+========================= */
+@media (max-width: 640px) {
+  .cg-action span {
+    display: none;
+  }
+
+  .cg-action {
+    padding: 8px;
+    border-radius: 12px;
+  }
+
+  .cg-actions {
+    justify-content: flex-start;
+  }
+
+  /* Table → card feel */
+  .cg-table thead {
+    display: none;
+  }
+
+  .cg-table tr {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 8px;
+    padding: 10px 0;
+  }
+
+  .cg-table td {
+    padding: 4px 0;
+    border-bottom: none;
+  }
+}
+
+/* MODAL */
+.cg-modalOverlay {
+ position:fixed;
+  inset:0;
+  background:rgba(15,23,42,.55);
+  backdrop-filter:blur(6px);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:999;
+  animation:fade .18s ease;
+}
+
+.cg-modal {
+  background:white;
+  padding:32px 36px;
+  border-radius:22px;
+  width:420px;
+  max-width:92%;
+  text-align:center;
+  box-shadow:
+    0 30px 80px rgba(0,0,0,.25),
+    0 6px 18px rgba(0,0,0,.12);
+  animation:pop .18s ease;
+}
+
+.cg-modal h3 {
+margin:0 0 10px;
+  font-size:22px;
+  font-weight:800;
+  color:#0f172a;}
+
+.cg-modal p {
+ margin:0 0 26px;
+  font-size:16px;
+  color:#64748b;
+  font-weight:500;
+}
+
+.cg-modalActions {
+   display:flex;
+  gap:14px;
+  justify-content:center;
+}
+
+.cg-modalActions button {
+    padding:12px 22px;
+  border:none;
+  border-radius:12px;
+  font-weight:700;
+  font-size:14px;
+  cursor:pointer;
+  transition:.18s ease;
+}
+
+.cg-modalActions .danger {
+ background:#dc2626;
+  color:white;
+  box-shadow:0 6px 16px rgba(220,38,38,.35);
+}
+.cg-modalActions .danger:hover{
+  background:#b91c1c;
+  transform:translateY(-1px);
+  box-shadow:0 10px 22px rgba(220,38,38,.45);
+}
+
+/* ANIMATIONS */
+
+@keyframes fade{
+  from{opacity:0}
+  to{opacity:1}
+}
+
+@keyframes pop{
+  from{
+    transform:scale(.92);
+    opacity:0;
+  }
+  to{
+    transform:scale(1);
+    opacity:1;
+  }
+}
+/* =========================
+   BASE GRID (DESKTOP)
+========================= */
+.cg-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+/* =========================
+   TABLET FIX (STACK)
+   641px – 1024px
+========================= */
+@media (max-width: 1024px) {
+  .cg-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cg-side {
+    order: 2;
+  }
+
+  .pl-card {
+    width: 100%;
+  }
+}
+
+/* =========================
+   MOBILE (REFINE)
+   ≤ 640px
+========================= */
+@media (max-width: 640px) {
+  .cg-grid {
+    gap: 16px;
+  }
+
+  .cg-table {
+    font-size: 13px;
+  }
+
+  .cg-actions {
+    gap: 6px;
+  }
+
+  .cg-action span {
+    display: none; /* icon only */
+  }
+
+  .cg-action {
+    padding: 6px;
+    width: 36px;
+    height: 36px;
+    justify-content: center;
+  }
+}
